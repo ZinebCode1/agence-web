@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #212529;
+      padding: 40px;
+    }
+
+    .faq-section {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .faq-title {
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff6b5a;
+      margin-bottom: 30px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* 2 colonnes */
+      gap: 18px;
+    }
+
+    .faq-item {
+      display: flex;
+      align-items: center;
+      background: white;
+      border-radius: 6px;
+      padding: 15px;
+      box-shadow: 0 2px 5px #eee;
+      position: relative;
+    }
+
+    .faq-question {
+      margin-left: 16px;
+      font-weight: 500;
+      color: #212529;
+      flex: 1;
+    }
+
+    .faq-toggle {
+      background: none;
+      border: none;
+      font-size: 22px;
+      font-weight: bold;
+      color: #ff9689;
+      cursor: pointer;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      transition: background 0.2s;
+    }
+
+    .faq-toggle:hover {
+      background: #ffe4e1;
+    }
+
+    .faq-answer {
+      display: none;
+      position: absolute;
+      top: 54px;
+      left: 0;
+      width: 100%;
+      background: #fff6f3;
+      border-radius: 6px;
+      padding: 14px;
+      color: #333;
+      box-shadow: 0 2px 8px #eee;
+      z-index: 1;
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    .faq-item.active .faq-toggle {
+      color: #212529;
+    }
+  </style>
+</head>
+<body>
+  <div class="faq-section">
+    <div class="faq-title">Toutes les réponses à vos questions</div>
+
+    <div class="faq-grid">
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Comment choisir une agence de développement web ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Quels services propose une agence de développement ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Quels sont les avantages d’une agence spécialisée ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Comment évaluer une agence de développement ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Quels projets peut réaliser une agence web ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Comment se déroule le processus de développement ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Quels outils utilise une agence de développement ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-toggle">+</button>
+        <span class="faq-question">Combien coûtent les services d’une agence ?</span>
+        <div class="faq-answer">Réponse détaillée ici...</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JS pour ouvrir/fermer les réponses
+    document.querySelectorAll(".faq-toggle").forEach(btn => {
+      btn.addEventListener("click", () => {
+        const item = btn.parentElement;
+        item.classList.toggle("active");
+      });
+    });
+  </script>
+</body>
+</html>
