@@ -200,25 +200,64 @@
         }
 
         /* Statistics */
-        .stats {
-            position: absolute;
-            bottom: 50px;
-            left: 0;
-            right: 120px;
-            display: flex;
-            gap: 40px;
-            justify-content: center;
-        }
+     /* Statistics */
+.stats {
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    right: 120px;
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 0 20px; /* Add horizontal padding */
+}
 
-        .stat-item {
-            text-align: center;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            min-width: 225px;
-        }
+.stat-item {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    min-width: 225px;
+    flex: 0 1 auto; /* Allow items to shrink if needed */
+}
+
+/* Tablet and smaller screens */
+@media (max-width: 768px) {
+    .stats {
+        bottom: 30px;
+        right: 0; /* Remove the right offset on mobile */
+        gap: 20px;
+        padding: 0 15px;
+    }
+    
+    .stat-item {
+        min-width: 150px;
+        padding: 20px;
+        flex: 1 1 calc(50% - 10px); /* Two items per row on tablets */
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+    .stats {
+        bottom: 20px;
+        gap: 15px;
+        flex-direction: column; /* Stack vertically on mobile */
+        align-items: center;
+        padding: 0 20px;
+    }
+    
+    .stat-item {
+        min-width: unset;
+        width: 100%;
+        max-width: 280px; /* Limit max width for better appearance */
+        padding: 20px 15px;
+    }
+}
 
         .stat-number {
             font-size: 3em;
